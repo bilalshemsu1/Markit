@@ -4,11 +4,19 @@ import {main} from '../models';
 
 export function CheckForUpdates(arg1:string):Promise<main.UpdateCheckResult>;
 
+export function ConvertFileContent(arg1:string,arg2:Array<number>):Promise<main.ConversionResult>;
+
+export function ConvertToMarkdownFile(arg1:string):Promise<main.ConversionResult>;
+
 export function GetStartupFile():Promise<string>;
 
 export function OpenFile():Promise<string>;
 
+export function OpenImportFile():Promise<string>;
+
 export function ReadFile(arg1:string):Promise<string>;
+
+export function ReadFileBytes(arg1:string):Promise<Array<number>>;
 
 export function SaveFile(arg1:string,arg2:string):Promise<void>;
 

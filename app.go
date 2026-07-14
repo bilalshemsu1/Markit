@@ -160,13 +160,35 @@ func (a *App) OpenFile() string {
 	return path
 }
 
-// ReadFile reads a file from disk and returns its content
+// OpenImportFile opens a native file dialog for importing documents
+func (a *App) OpenImportFile() string {
+	path, err := runtime.OpenFileDialog(a.ctx, runtime.OpenDialogOptions{
+		Title: "Import Document",
+		Filters: []runtime.FileFilter{
+			{
+				DisplayName: "PDF Files",
+				Pattern:     "*.pdf",
+			},
+		},
+	})
+	if err != nil {
+		return ""
+	}
+	return path
+}
+
+// ReadFile reads a file from disk and returns its content as text
 func (a *App) ReadFile(path string) (string, error) {
 	content, err := os.ReadFile(path)
 	if err != nil {
 		return "", err
 	}
 	return string(content), nil
+}
+
+// ReadFileBytes reads a file and returns raw bytes (for binary files like PDF)
+func (a *App) ReadFileBytes(path string) ([]byte, error) {
+	return os.ReadFile(path)
 }
 
 // SaveFile saves content to an existing file path
@@ -239,4 +261,15 @@ func (a *App) CheckForUpdates(currentVersion string) UpdateCheckResult {
 
 	println("No update available. Current:", current, "Latest:", latest)
 	return UpdateCheckResult{HasUpdate: false}
+}
+
+// ConvertToMarkdownFile converts a file on disk to markdown
+func (a *App) ConvertToMarkdownFile(filePath string) ConversionResult {
+	return ConvertToMarkdown(filePath)
+}
+
+// ConvertFileContent converts uploaded file bytes to markdown
+// Called from the frontend when the user imports a file
+func (a *App) ConvertFileContent(fileName string, content []byte) ConversionResult {
+	return ConvertFileContent(fileName, content)
 }

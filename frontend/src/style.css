@@ -24,3 +24,13 @@ body {
     height: 100vh;
     text-align: center;
 }
+
+#btn-import {
+    border-color: var(--purple);
+    color: var(--purple);
+}
+
+#btn-import:hover {
+    background: rgba(188, 140, 255, 0.1);
+    color: #fff;
+}

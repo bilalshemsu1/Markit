@@ -1,5 +1,21 @@
 export namespace main {
 	
+	export class ConversionResult {
+	    success: boolean;
+	    markdown: string;
+	    error: string;
+	
+	    static createFrom(source: any = {}) {
+	        return new ConversionResult(source);
+	    }
+	
+	    constructor(source: any = {}) {
+	        if ('string' === typeof source) source = JSON.parse(source);
+	        this.success = source["success"];
+	        this.markdown = source["markdown"];
+	        this.error = source["error"];
+	    }
+	}
 	export class UpdateCheckResult {
 	    hasUpdate: boolean;
 	    version: string;

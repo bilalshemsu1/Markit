@@ -6,6 +6,14 @@ export function CheckForUpdates(arg1) {
   return window['go']['main']['App']['CheckForUpdates'](arg1);
 }
 
+export function ConvertFileContent(arg1, arg2) {
+  return window['go']['main']['App']['ConvertFileContent'](arg1, arg2);
+}
+
+export function ConvertToMarkdownFile(arg1) {
+  return window['go']['main']['App']['ConvertToMarkdownFile'](arg1);
+}
+
 export function GetStartupFile() {
   return window['go']['main']['App']['GetStartupFile']();
 }
@@ -14,8 +22,16 @@ export function OpenFile() {
   return window['go']['main']['App']['OpenFile']();
 }
 
+export function OpenImportFile() {
+  return window['go']['main']['App']['OpenImportFile']();
+}
+
 export function ReadFile(arg1) {
   return window['go']['main']['App']['ReadFile'](arg1);
+}
+
+export function ReadFileBytes(arg1) {
+  return window['go']['main']['App']['ReadFileBytes'](arg1);
 }
 
 export function SaveFile(arg1, arg2) {
