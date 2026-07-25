@@ -1,6 +1,6 @@
 # Markit
 
-![Version](https://img.shields.io/badge/version-v1.4.0-blue) ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey) ![License](https://img.shields.io/badge/license-MIT-green)
+![Version](https://img.shields.io/badge/version-v1.7.0-blue) ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey) ![License](https://img.shields.io/badge/license-MIT-green)
 
 A **fast**, distraction-free Markdown editor for Windows built with Wails. Features a clean interface, split-view editing, native file dialogs, and keyboard shortcuts. No server. No account. Your files never leave your device.
 
@@ -123,7 +123,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgments
 
 - Built with [Wails](https://wails.io/) - Go framework for building desktop apps
-- Markdown rendering powered by [marked.js](https://marked.js.org/)
 - Icons from [Heroicons](https://heroicons.com/)
 
 ## 📄 Changelog

@@ -1,4 +1,4 @@
-module md-editor
+module markit
 
 go 1.24.1
 

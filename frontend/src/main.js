@@ -256,6 +256,7 @@ function showEmpty() {
       return;
     }
     // Ctrl+S
+    if((e.ctrlKey||e.metaKey) && e.shiftKey && e.key === 'S'){ e.preventDefault(); saveFileAs(); return; }
     if((e.ctrlKey||e.metaKey) && e.key === 's'){ e.preventDefault(); saveFile(); return; }
     // Ctrl+B
     if((e.ctrlKey||e.metaKey) && e.key === 'b'){ e.preventDefault(); fmt('bold'); return; }
